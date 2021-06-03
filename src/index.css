@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+.inputSearch{
+    width: 330px;
+    margin-left: 130px;
+}
+.recipesBody {
+    text-align: center;
+   
+}
+.imgRecipeBody{
+    height: 200px;
+    width: 350px;
+}
+.imgRecipePage{
+    width: 400px;
+}
+.bodyContainer{
+    margin-top: 100px;
+
+}
+.img15 {
+    margin: 0;
+    height: 400px;
+    width: 800px;
+}
+.pagesContainer{
+    display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+h3 {
+    margin-left: 150px;
+}

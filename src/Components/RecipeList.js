@@ -27,7 +27,7 @@ export default function RecipeList() {
             </form>
             <Splide className="slide" options={{
                 rewind: true,
-                width: 600,
+                width: 450,
                 gap: '1rem',
             }}>
                 {arrRecipe.map((recipe) => (

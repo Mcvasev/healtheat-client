@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 body{
     margin: 0;
 }
@@ -14,7 +14,7 @@ body{
 
 .roulete {
     width: 100%;
-    background-image: url(../public/img/132.jpeg);
+    background-image: url(../public/img/1312.jpg);
     background-size: cover;
     background-position: 50% -50%;
     position: relative;
@@ -88,9 +88,8 @@ body{
    
 }
 .imgRecipeBody{
-
-    height: 250px;
-    width: 300px;
+    height: 150px;
+    width: 200px;
 }
 .imgRecipePage{
     width: 400px;
@@ -112,24 +111,18 @@ h1 {
     margin-bottom: 0px;
 }
 .bodyRecipes{
-    width: 300px;
+    /* display:  flex; */
+    width: 500px;
+   
     overflow:hidden;
-    border: 1px solid rgb(248, 218, 218);
-    border-radius: 10px;
+    
     position: relative;
-    color: #fff
+    background-color: white;
 }
 .buttonRandomRecipe{
     /* background-size: cover;
     background-image: url(https://image.flaticon.com/icons/png/512/120/120869.png); */
     opacity: 0.7;
-    width: 120px;
-    height: 20px;
-    margin-top: 25px;
-    margin-left: 20px;
-    position: absolute;
-    left: 150px;
-    top: 205px;
     border: none;
     background-color: rgb(245, 178, 178);
     border-radius: 10px;
@@ -141,16 +134,12 @@ h1 {
     flex-direction: column;
 }
 .buttonWindow{
-    margin-left: 20px;
-    width: 260px;
     height: 20px;
     border: none;
     border-radius: 10px;
     opacity: 0.7;
 }
-.titleButton{
-    display: flex;
-}
+
 h2{
     margin-top: 0;
 }
@@ -186,4 +175,12 @@ h4{
     position: fixed;
     z-index: +1;
     opacity: 0.9;
+}
+.recipeName{
+    font-family: 'Roboto', sans-serif;
+    font-size:25px;
+    width: 270px;
+}
+.titleButton{
+    display: flex;
 }

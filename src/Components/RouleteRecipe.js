@@ -3,6 +3,8 @@ import { loadList } from "./api";
 import Recipes from "./Recipes";
 import RecipeList from "./RecipeList";
 
+import { Button } from 'antd';
+
 
 export default function RouleteRecipe() {
     let [breakfast, setBreakfast] = useState();
@@ -59,22 +61,22 @@ export default function RouleteRecipe() {
         setFlagWindow3(!flagWindow3)
     }
     return (
-        <div className="container1">
-            <div className="header">
-            <RecipeList />
+        <div className="roulete">
+            <div className={ dinner ? "banner banner_list" : "banner"}>
+                <h1 className="banner-title">HealthEat</h1>
+                <p className="banner-description">Подбери рацион питания. Быстро.</p>
+                <Button onClick={fetchRecipe}>Предложить рацион</Button>
             </div>
-            
 
-            <button className="randomButton" onClick={fetchRecipe}>random</button>
-            <img className="bodyImage" src="/img/132.jpeg" alt="img1" />
-            {dinner ?
-                <div className="recipes1">
-                    <Recipes {...breakfast[randomBreakfast]} breakRandom={breakRandom} flagWindow={flagWindow} flag={flag} />
-                    <Recipes {...lunch[randomLunch]} breakRandom={lunchRandom} flagWindow={flagWindow2} flag={flag2} />
-                    <Recipes {...dinner[randomDinner]} breakRandom={dinnerRandom} flagWindow={flagWindow3} flag={flag3} />
-                </div>
-                : <p></p>
-            }
+            <div className={ dinner ? "recipes1 recipes1_show" : "recipes1 recipes1_hidden"}>
+                {dinner ?
+                    <>
+                        <Recipes {...breakfast[randomBreakfast]} breakRandom={breakRandom} flagWindow={flagWindow} flag={flag} />
+                        <Recipes {...lunch[randomLunch]} breakRandom={lunchRandom} flagWindow={flagWindow2} flag={flag2} />
+                        <Recipes {...dinner[randomDinner]} breakRandom={dinnerRandom} flagWindow={flagWindow3} flag={flag3} />
+                    </>
+                : null}
+            </div>
 
         </div >
     )

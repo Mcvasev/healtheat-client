@@ -8,7 +8,7 @@ import { Route } from "react-router-dom";
 
 export default function App() {
     return (
-        <div className = "container">
+        <div className="app">
             <Route path="/" exact component={RouleteRecipe} />
             <Route path="/list" exact component={RecipeList} />
             <Route path="/recipe/:id" exact component={RecipePages} />

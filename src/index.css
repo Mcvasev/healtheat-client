@@ -1,13 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
 body{
     margin: 0;
 }
-.container {
+.app {
+    width: 100%;
     font-family: 'Roboto Mono', monospace;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
 }
+
+.roulete {
+    width: 100%;
+    background-image: url(../public/img/132.jpeg);
+    background-size: cover;
+    background-position: 50% -50%;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.banner {
+    padding: 40px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* transition: all 1s linear; */
+}
+
+.banner_list {
+    position: static;
+    margin: 20px auto;
+    transform: none;
+    /* transition: all 1s linear; */
+}
+
+.banner-title {
+    margin: 0 0 24px;
+    color: #fff;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 50px;
+}
+
+.banner-description {
+    margin: 0 0 40px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.randomButton{
+    border: none;
+    width: 300px;
+    border-radius: 10px;
+    display: block;
+}
+
+
+.recipes1 {
+    padding: 30px 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+
+.recipes1_hidden {
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+
+.recipes1_show {
+    opacity: 1;
+    transition: all 0.5s linear;
+}
+
 .inputSearch{
     width: 330px;
     margin-left: 130px;
@@ -47,6 +117,7 @@ h1 {
     border: 1px solid rgb(248, 218, 218);
     border-radius: 10px;
     position: relative;
+    color: #fff
 }
 .buttonRandomRecipe{
     /* background-size: cover;
@@ -101,26 +172,9 @@ h4{
     height: 100%;
     z-index: -1;
 }
-.recipes1{
-    background-color: white;
-    width: 100%;
-    /* margin-top: 500px; */
-    opacity: 0.9;
-}
-.container1{
-    width: 100%;
-    
-}
-.randomButton{
-    border: none;
-    width: 300px;
-    border-radius: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 470px;
-    /* position: fixed;  */
-}
+
+
+
 .recipeSearch{
     background-color: white;
     opacity: 0.9;

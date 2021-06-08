@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Recipes({ imgrec, title, description, ingredients, breakRandom, flagWindow, flag,type }) {
+export default function Recipes({ imgrec, title, description, ingredients, breakRandom, flagWindow, flag, type }) {
     return (
-        <>
+        <div className="containerRec">
             <div className="bodyRecipes">
                 <img className="imgRecipeBody" src={imgrec} />
                 <div className="nameRecipe">
@@ -14,7 +14,6 @@ export default function Recipes({ imgrec, title, description, ingredients, break
                     {flagWindow ?
                         <div>
                             <p className="recipeDescription">{description}</p>
-                            <hr/>
                             <ul>
                                 {ingredients.map((item) => (
                                     <li key={item.title}>{item.title} {item.amount} {item.units} </li>
@@ -25,7 +24,7 @@ export default function Recipes({ imgrec, title, description, ingredients, break
                     }
                 </div>
             </div>
-            <hr/>
-        </>
+            <hr />
+        </div>
     )
 }

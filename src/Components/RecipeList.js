@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import { loadList } from "./api";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+
 
 
 export default function RecipeList() {
     let [arrRecipe, setArrRecipe] = useState([]);
-    let [arr, setArr] = useState('');
+    let [arr, setArr] = useState();
 
     function searchRecipe(e) {
         e.preventDefault();
@@ -25,17 +24,10 @@ export default function RecipeList() {
                 <input className="inputSearch" type="text" name="input"></input>
                 <button>Поиск</button>
             </form>
-            <Splide className="slide" options={{
-                rewind: true,
-                width: 450,
-                gap: '1rem',
-            }}>
-                {arrRecipe.map((recipe) => (
-                    <SplideSlide className="recipesBody" key={recipe._id}>
-                        <Recipe {...recipe} />
-                    </SplideSlide>
-                ))}
-            </Splide>
+            {arrRecipe.map((recipe) => (
+                <li className="recipesBody" key={recipe._id}>
+                    <Recipe {...recipe} /></li>
+            ))}
         </div>
     )
 }

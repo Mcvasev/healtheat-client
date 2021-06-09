@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { loadList } from "./api";
 import Recipes from "./Recipes";
-import RecipeList from "./RecipeList";
+import ButtonStyle from "./ButtonStyle";
 
 import { Button } from 'antd';
 
@@ -62,20 +62,21 @@ export default function RouleteRecipe() {
     }
     return (
         <div className="roulete">
-            <div className={ dinner ? "banner banner_list" : "banner"}>
+            <div className={dinner ? "banner banner_list" : "banner"}>
                 <h1 className="banner-title">HealthEat</h1>
                 <p className="banner-description">Подбери рацион питания. Быстро.</p>
-                <Button onClick={fetchRecipe}>Предложить рацион</Button>
+                {/* <button className="showRecepti" onClick={fetchRecipe}>Предложить рацион</button> */}
+               <ButtonStyle fetchRecipe={fetchRecipe}/>
             </div>
 
-            <div className={ dinner ? "recipes1 recipes1_show" : "recipes1 recipes1_hidden"}>
+            <div className={dinner ? "recipes1 recipes1_show" : "recipes1 recipes1_hidden"}>
                 {dinner ?
                     <>
                         <Recipes {...breakfast[randomBreakfast]} breakRandom={breakRandom} flagWindow={flagWindow} flag={flag} />
                         <Recipes {...lunch[randomLunch]} breakRandom={lunchRandom} flagWindow={flagWindow2} flag={flag2} />
                         <Recipes {...dinner[randomDinner]} breakRandom={dinnerRandom} flagWindow={flagWindow3} flag={flag3} />
                     </>
-                : null}
+                    : null}
             </div>
 
         </div >

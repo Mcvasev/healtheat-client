@@ -8,10 +8,11 @@ import { Route } from "react-router-dom";
 
 export default function App() {
     return (
-        <div className="app">
+        <div >
+            <Route path="/api/post/savedList/:id" exact component={RecipePages}/>
             <Route path="/" exact component={RouleteRecipe} />
             <Route path="/list" exact component={RecipeList} />
-            <Route path="/recipe/:id" exact component={RecipePages} />
+            {/* <Route path="/recipe/:id" exact component={RecipePages} /> */}
         </div>
     )
 };

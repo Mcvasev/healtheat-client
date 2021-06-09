@@ -15,8 +15,9 @@ body{
 .roulete {
     width: 100%;
     background-image: url(../public/img/1312.jpg);
+    /* background-repeat: no-repeat; */
     background-size: cover;
-    background-position: 50% -50%;
+    /* background-position: 50% -50%; */
     position: relative;
     background-attachment: fixed;
 }
@@ -102,11 +103,7 @@ body{
     height: 400px;
     width: 800px;
 }
-.pagesContainer{
-    display: flex;
-   align-items: center;
-   flex-direction: column;
-}
+
 h1 {
     margin-bottom: 0px;
 }
@@ -161,9 +158,6 @@ h4{
     height: 100%;
     z-index: -1;
 }
-
-
-
 .recipeSearch{
     background-color: white;
     opacity: 0.9;
@@ -183,4 +177,12 @@ h4{
 }
 .titleButton{
     display: flex;
+}
+.recipeContainer{ 
+    width: 400px;
+
+}
+.pagesContainer{
+    display: flex;
+    justify-content: space-around;
 }

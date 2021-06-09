@@ -10,9 +10,6 @@ export default function Recipes({ imgrec, title, description, ingredients, break
                         <div>
                             <p className="zavtrak">{type}</p>
                             <h5 className="recipeName">{title}</h5>
-                            {/* <p>{ingredients.map((item) => (
-                                 item.title
-                                ))},</p> */}
                         </div>
 
                     </div>
@@ -34,8 +31,6 @@ export default function Recipes({ imgrec, title, description, ingredients, break
                     }
                 </div>
             </div>
-
-
             <hr />
         </div>
     )

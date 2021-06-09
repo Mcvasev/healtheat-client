@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { loadList } from "./api";
+import { loadList, createSavedList, loadSavedList } from "./api";
 import Recipes from "./Recipes";
-import ButtonStyle from "./ButtonStyle";
 
+import ButtonStyle from "./ButtonStyle";
+import RecipeList from "./RecipeList";
+import { Link } from "react-router-dom";
 import { Button } from 'antd';
 
 
@@ -16,6 +18,7 @@ export default function RouleteRecipe() {
     let [flagWindow, setFlagWindow] = useState(false);
     let [flagWindow2, setFlagWindow2] = useState(false);
     let [flagWindow3, setFlagWindow3] = useState(false);
+    let [serve_id, setServe_id] = useState('')
 
     function fetchRecipe() {
         loadList("").then(result => {
@@ -60,25 +63,35 @@ export default function RouleteRecipe() {
     function flag3() {
         setFlagWindow3(!flagWindow3)
     }
+
+    async function saveList() {
+        const response = await createSavedList(breakfast[randomBreakfast]._id, lunch[randomLunch]._id, dinner[randomDinner]._id);
+        setServe_id(response._id);
+    }
+    console.log(serve_id);
     return (
-        <div className="roulete">
-            <div className={dinner ? "banner banner_list" : "banner"}>
-                <h1 className="banner-title">HealthEat</h1>
-                <p className="banner-description">Подбери рацион питания. Быстро.</p>
-                {/* <button className="showRecepti" onClick={fetchRecipe}>Предложить рацион</button> */}
-               <ButtonStyle fetchRecipe={fetchRecipe}/>
-            </div>
+        <div className="app">
+            <div className="roulete">
+                <div className={dinner ? "banner banner_list" : "banner"}>
+                    <h1 className="banner-title">HealthEat</h1>
+                    <p className="banner-description">Подбери рацион питания. Быстро.</p>
+                    <ButtonStyle fetchRecipe={fetchRecipe}/>
+                </div>
 
-            <div className={dinner ? "recipes1 recipes1_show" : "recipes1 recipes1_hidden"}>
-                {dinner ?
-                    <>
-                        <Recipes {...breakfast[randomBreakfast]} breakRandom={breakRandom} flagWindow={flagWindow} flag={flag} />
-                        <Recipes {...lunch[randomLunch]} breakRandom={lunchRandom} flagWindow={flagWindow2} flag={flag2} />
-                        <Recipes {...dinner[randomDinner]} breakRandom={dinnerRandom} flagWindow={flagWindow3} flag={flag3} />
-                    </>
-                    : null}
-            </div>
-
-        </div >
+                <div className={dinner ? "recipes1 recipes1_show" : "recipes1 recipes1_hidden"}>
+                    <button onClick={saveList}> Cохранить рацион</button>
+                    {serve_id ? <Link to={`/api/post/savedList/${serve_id}`} ><p>Перейти по ссылке</p></Link>
+                        : null
+                    }
+                    {dinner ?
+                        <>
+                            <Recipes {...breakfast[randomBreakfast]} breakRandom={breakRandom} flagWindow={flagWindow} flag={flag} />
+                            <Recipes {...lunch[randomLunch]} breakRandom={lunchRandom} flagWindow={flagWindow2} flag={flag2} />
+                            <Recipes {...dinner[randomDinner]} breakRandom={dinnerRandom} flagWindow={flagWindow3} flag={flag3} />
+                        </>
+                        : null}
+                </div>
+            </div >
+        </div>
     )
 }

@@ -14,44 +14,46 @@ export default function RecipePages(props) {
     console.log(recipe)
     return (
         <div>
-            <Link to={`/`} >Домой</Link>
+            <Link className="banner-title" to={`/`} >HealthEat</Link>
             {recipe ?
                 <div className="pagesContainer">
                     <div className="recipeContainer">
-                        <h1>{recipe[0].title}</h1>
+                        <h2>{recipe[0].title}</h2>
                         <img className="imgRecipePage" src={recipe[0].imgrec} />
                         <h3>Ингредиенты:</h3>
                         <ul>
                             {recipe[0].ingredients.map((item) => (
-                                <li key={item.title}>{item.title} {item.amount} {item.units}</li>
+                                <li className="listPagesRecipe" key={item.title}>{item.title} {item.amount} {item.units}</li>
                             ))}
                         </ul>
                         <h3>Рецепт:</h3>
-                        <p>{recipe[0].description}</p>
+                        <p className="listPagesRecipe">{recipe[0].description}</p>
                     </div>
+                    <hr className="hrPages"/>
                     <div className="recipeContainer">
-                        <h1>{recipe[1].title}</h1>
+                        <h2>{recipe[1].title}</h2>
                         <img className="imgRecipePage" src={recipe[1].imgrec} />
                         <h3>Ингредиенты:</h3>
                         <ul>
                             {recipe[1].ingredients.map((item) => (
-                                <li key={item.title}>{item.title} {item.amount} {item.units}</li>
+                                <li className="listPagesRecipe" key={item.title}>{item.title} {item.amount} {item.units}</li>
                             ))}
                         </ul>
                         <h3>Рецепт:</h3>
-                        <p>{recipe[1].description}</p>
+                        <p className="listPagesRecipe">{recipe[1].description}</p>
                     </div>
+                    <hr className="hrPages"/>
                     <div className="recipeContainer">
-                        <h1>{recipe[2].title}</h1>
+                        <h2>{recipe[2].title}</h2>
                         <img className="imgRecipePage" src={recipe[2].imgrec} />
                         <h3>Ингредиенты:</h3>
                         <ul>
                             {recipe[2].ingredients.map((item) => (
-                                <li key={item.title}>{item.title} {item.amount} {item.units}</li>
+                                <li className="listPagesRecipe" key={item.title}>{item.title} {item.amount} {item.units}</li>
                             ))}
                         </ul>
                         <h3>Рецепт:</h3>
-                        <p>{recipe[2].description}</p>
+                        <p className="listPagesRecipe">{recipe[2].description}</p>
                     </div>
                 </div>
                 :

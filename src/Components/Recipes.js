@@ -17,13 +17,13 @@ export default function Recipes({ imgrec, title, description, ingredients, break
                     <button className="buttonWindow" onClick={flag}>показать рецепт</button>
                     {flagWindow ?
                         <div className="showRecept">
-                            <h3>Ингредиенты:</h3>
+                            <h3 className="h3class">Ингредиенты:</h3>
                             <ul>
                                 {ingredients.map((item) => (
-                                    <li key={item.title}>{item.title} {item.amount} {item.units} </li>
+                                    <li className="ingredientsList" key={item.title}>{item.title} {item.amount} {item.units}</li>
                                 ))}
                             </ul>
-                            <h3>Рецепт:</h3>
+                            <h3 className="h3class">Рецепт:</h3>
                             <p className="recipeDescription">{description}</p>
 
                         </div>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { loadList, createSavedList, loadSavedList } from "./api";
 import Recipes from "./Recipes";
+
+import ButtonStyle from "./ButtonStyle";
 import RecipeList from "./RecipeList";
 import { Link } from "react-router-dom";
 import { Button } from 'antd';
@@ -73,7 +75,7 @@ export default function RouleteRecipe() {
                 <div className={dinner ? "banner banner_list" : "banner"}>
                     <h1 className="banner-title">HealthEat</h1>
                     <p className="banner-description">Подбери рацион питания. Быстро.</p>
-                    <Button onClick={fetchRecipe}>Предложить рацион</Button>
+                    <ButtonStyle fetchRecipe={fetchRecipe}/>
                 </div>
 
                 <div className={dinner ? "recipes1 recipes1_show" : "recipes1 recipes1_hidden"}>
@@ -91,6 +93,5 @@ export default function RouleteRecipe() {
                 </div>
             </div >
         </div>
-
     )
 }

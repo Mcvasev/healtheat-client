@@ -8,7 +8,7 @@ export default function Recipes({ imgrec, title, description, ingredients, break
                     <div className="titleButton">
                         <img className="imgRecipeBody" src={imgrec} />
                         <div>
-                            <p>{type}</p>
+                            <p className="zavtrak">{type}</p>
                             <h5 className="recipeName">{title}</h5>
                         </div>
 
@@ -16,7 +16,7 @@ export default function Recipes({ imgrec, title, description, ingredients, break
                     <button className="buttonRandomRecipe" onClick={breakRandom}> сменить {type} </button>
                     <button className="buttonWindow" onClick={flag}>показать рецепт</button>
                     {flagWindow ?
-                        <div>
+                        <div className="showRecept">
                             <h3>Ингредиенты:</h3>
                             <ul>
                                 {ingredients.map((item) => (

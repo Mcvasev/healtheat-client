@@ -19,10 +19,14 @@ export default function RouleteRecipe() {
     let [flagWindow2, setFlagWindow2] = useState(false);
     let [flagWindow3, setFlagWindow3] = useState(false);
     let [flagLink, setFlagLink] = useState(false);
-    let [serve_id, setServe_id] = useState('')
+    let [serve_id, setServe_id] = useState('');
 
 
-    function fetchRecipe() {
+    function fetchRecipe(e) {
+        console.log(e);
+        e.preventDefault();
+
+        console.log("hi")
         loadList("").then(result => {
             setBreakfast(result.filter(item => item.type === 'завтрак'))
             setLunch(result.filter(item => item.type === 'обед'))
@@ -67,19 +71,27 @@ export default function RouleteRecipe() {
         setFlagWindow3(!flagWindow3)
     }
 
-    async function saveList() {
+    async function saveList(e) {
+        e.preventDefault();
+
+        console.log("hi12321")
         const response = await createSavedList(breakfast[randomBreakfast]._id, lunch[randomLunch]._id, dinner[randomDinner]._id);
         setServe_id(response._id);
         setFlagLink(!flagLink)
     }
-    console.log(serve_id);
+
+    function test() {
+        console.log('123')
+    }
+
     return (
         <div className="app">
             <div className="roulete">
                 <div className={dinner ? "banner banner_list" : "banner"}>
                     <h1 className="banner-title"><Link className="logo" to={`/`} >HealthEat</Link></h1>
                     <p className="banner-description">Подбери рацион питания. Быстро.</p>
-                    <ButtonStyle fetchRecipe={fetchRecipe} name={"Предложить рацион"} />
+                    <ButtonStyle onClick={fetchRecipe} name={"Предложить рацион"} />
+                    <button onClick={() => { console.log(123) }}>Предложить рацион</button>
                 </div>
 
                 <div className={dinner ? "recipes1 recipes1_show" : "recipes1 recipes1_hidden"}>
@@ -91,11 +103,11 @@ export default function RouleteRecipe() {
                             <Recipes {...lunch[randomLunch]} breakRandom={lunchRandom} flagWindow={flagWindow2} flag={flag2} />
                             <Recipes {...dinner[randomDinner]} breakRandom={dinnerRandom} flagWindow={flagWindow3} flag={flag3} />
                             {!flagLink ?
-                                <ButtonStyle fetchRecipe={saveList} name={"Сохранить рацион"} />
+                                <ButtonStyle onClick={saveList} name={"Сохранить рацион"} />
                                 : null
                             }
                             
-                            {flagLink ? <Link to={`/api/post/savedList/${serve_id}`} ><p>Перейти по ссылке</p></Link>
+                            {flagLink ? <Link to={`/lists/${serve_id}`} ><p>Перейти по ссылке</p></Link>
                                 : null
                             }
                         </>

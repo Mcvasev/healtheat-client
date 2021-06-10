@@ -91,7 +91,6 @@ export default function RouleteRecipe() {
                     <h1 className="banner-title"><Link className="logo" to={`/`} >HealthEat</Link></h1>
                     <p className="banner-description">Подбери рацион питания. Быстро.</p>
                     <ButtonStyle onClick={fetchRecipe} name={"Предложить рацион"} />
-                    <button onClick={() => { console.log(123) }}>Предложить рацион</button>
                 </div>
 
                 <div className={dinner ? "recipes1 recipes1_show" : "recipes1 recipes1_hidden"}>

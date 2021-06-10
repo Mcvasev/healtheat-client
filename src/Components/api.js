@@ -2,7 +2,7 @@
 export async function loadList(arr) {
     try {
         const response = await fetch(
-            `http://localhost:3001/api/recipe?search=${arr}`
+            `https://healtheatapp.herokuapp.com/api/recipe?search=${arr}`
         );
         const body = await response.json();
         return body;
@@ -13,7 +13,7 @@ export async function loadList(arr) {
 export async function loadSavedList(id) {
     try {
         const response = await fetch(
-            `http://localhost:3001/api/post/savedList/${id}`
+            `https://healtheatapp.herokuapp.com/api/post/savedList/${id}`
         );
         const body = await response.json();
         return body;
@@ -26,7 +26,7 @@ export async function loadSavedList(id) {
 export async function loadRecipe(id) {
     try {
         const response = await fetch(
-            `http://localhost:3001/api/recipe/${id}`
+            `https://healtheatapp.herokuapp.com/api/recipe/${id}`
         );
         const body = await response.json();
         return body;
@@ -39,7 +39,7 @@ export async function createSavedList(breakfastId, lounchId, dinnerId) {
     const info = {
         breakfastId, lounchId, dinnerId
     }
-    const response = await fetch('http://localhost:3001/api/post/savedList', {
+    const response = await fetch('https://healtheatapp.herokuapp.com/api/post/savedList', {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'

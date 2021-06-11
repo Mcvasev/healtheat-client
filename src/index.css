@@ -415,12 +415,48 @@ h4 {
     text-align: start;
     padding-left: 15px;
 }
-.hrPages{
-    height: 700px;
-}
-@media screen and (min-width: 320px) and (max-width: 520px) {
+
+@media screen and (min-width: 320px) and (max-width: 812px) {
     .bodyRecipes {
         display: flex;
         flex-direction: column;
+    }
+    .banner{
+        width:  auto;
+    }
+    .banner-description{
+        font-size: 12px;
+    }
+    .bodyRecipes{
+        width: 100%;
+    }
+    .recipeName{
+        font-size: 18px;
+    }
+    .zavtrak{
+        font-size: 16px;
+        width: 100%;
+    }
+    .imgRecipeBody{
+        width: 50%;
+    }
+    .headingRecipe{
+        width: 50%;
+    }
+    .recipeName{
+        width: 100%;
+    }
+    
+    .hrPages{
+        width: 100%;
+        height: 1px;
+    }
+    .imgRecipePage{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 812px) and (max-width: 1235px) {
+    .hrPages{
+        display: none;
     }
 }

@@ -7,7 +7,7 @@ export default function Recipes({ imgrec, title, description, ingredients, break
                 <div className="nameRecipe">
                     <div className="titleButton">
                         <img className="imgRecipeBody" src={imgrec} />
-                        <div>
+                        <div className="headingRecipe">
                             <p className="zavtrak">{type}</p>
                             <h5 className="recipeName">{title}</h5>
                         </div>
